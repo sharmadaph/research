@@ -97,4 +97,4 @@ jobs:
       uses: github/codeql-action/analyze@v4
       with:
         category: "/language:${{matrix.language}}"
-        paths: 1-JS/
+        paths: 2-JS/
