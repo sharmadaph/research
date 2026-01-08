@@ -29,3 +29,15 @@ button[type="submit"]:hover { background: #1d4ed8; }
 .message { margin-top: 12px; padding: 10px; border-radius: 8px; display: none; }
 .message.error { background: #fff1f2; color: #b91c1c; border: 1px solid #fecaca; }
 .message.success { background: #ecfdf5; color: #065f46; border: 1px solid #bbf7d0; }
+
+.secondary { margin-right: 8px; background: #e5e7eb; color: #111827; border: none; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+.secondary.danger { background: #fee2e2; color: #991b1b; }
+.log-controls { margin-top: 12px; }
+.logs { display: none; margin-top: 12px; }
+.logs h2 { margin: 0 0 8px 0; font-size: 1rem; }
+.logs ul { list-style: none; padding: 0; margin: 0; max-height: 180px; overflow: auto; border: 1px solid #e5e7eb; border-radius: 8px; }
+.logs li { padding: 8px 10px; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; }
+.logs li:last-child { border-bottom: none; }
+.logs .status { font-weight: 600; }
+.logs .status.success { color: #065f46; }
+.logs .status.fail { color: #991b1b; }
