@@ -1,0 +1,24 @@
+:root{--accent:#2563eb;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f3f4f6;color:#111}
+header{padding:16px;background:linear-gradient(90deg,#fff,#f9fafb);border-bottom:1px solid #e5e7eb}
+header h1{margin:0;font-size:1.25rem}
+main{display:grid;grid-template-columns:1fr 320px;gap:16px;padding:16px;align-items:start}
+.controls{margin-bottom:8px}
+.controls input{padding:6px 8px;margin-left:8px;width:280px}
+.controls button{margin-left:8px;padding:6px 10px}
+.note{font-size:0.85rem;color:var(--muted);margin-top:6px}
+#map{height:600px;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+#panel{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+#panel h2{margin-top:0}
+.muted{color:var(--muted)}
+.weather-row{display:flex;justify-content:space-between;margin:8px 0}
+.temp{font-size:1.5rem;font-weight:700}
+.small{font-size:0.9rem;color:var(--muted)}
+a{color:var(--accent)}
+
+@media (max-width:900px){
+  main{grid-template-columns:1fr;}
+  .controls input{width:160px}
+  #map{height:420px}
+}

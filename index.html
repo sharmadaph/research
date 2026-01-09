@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Map Weather Forecast</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+e2rY3b7gkXk1t/6w0b5Q2f3w3p2L5GkGkBtk0j4s=" crossorigin=""/>
+</head>
+<body>
+  <header>
+    <h1>Map Weather Forecast</h1>
+    <p>Select any location on the map to get current weather (°C / °F).</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label>OpenWeatherMap API key: <input id="apiKey" placeholder="Paste your API key here"></label>
+      <button id="saveKey">Save key</button>
+      <button id="locate">Use my location</button>
+      <div class="note">Get a free API key from <a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>.</div>
+    </div>
+
+    <div id="map"></div>
+
+    <aside id="panel">
+      <h2 id="place">Click on the map</h2>
+      <div id="weather">
+        <p class="muted">No data yet.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7w7gn0sVv7j3s2GQdVbYw6VQvGgYv+3qDgU9oM=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
