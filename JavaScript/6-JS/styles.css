@@ -1,0 +1,14 @@
+:root{--bg:#0f1724;--card:#111827;--accent:#60a5fa;--muted:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#071028 0%,#081624 100%);color:#e6eef6;min-height:100vh;display:grid;place-items:center;padding:32px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);padding:28px;border-radius:12px;max-width:720px;width:100%}
+h1{margin:0 0 8px;font-size:20px}
+p.lead{margin:0 0 18px;color:var(--muted);font-size:13px}
+.row{display:flex;gap:12px;align-items:center}
+input[type="text"]{flex:1;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:inherit;font-size:16px}
+.result{min-width:160px;padding:12px 14px;border-radius:8px;background:#031427;border:1px solid rgba(255,255,255,0.03);text-align:right;font-weight:600}
+.info{margin-top:12px;color:var(--muted);font-size:13px}
+.error{color:#ffb4b4}
+.example{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:13px;cursor:pointer}
+footer{margin-top:18px;color:var(--muted);font-size:12px}

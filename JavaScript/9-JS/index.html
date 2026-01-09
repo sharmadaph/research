@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>World Clock — Custom Offsets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <h1>World Clock</h1>
+      <p class="lead">See current time in cities. Add IANA time zones or custom offset expressions (e.g. <code>UTC+2</code>, <code>2h30m</code>, <code>+330m</code>).</p>
+    </header>
+
+    <form id="addForm" class="add-form">
+      <input id="cityName" placeholder="City label (e.g. Tokyo)" required />
+      <input id="tzValue" placeholder="IANA timezone (e.g. Asia/Tokyo) or offset expression" required />
+      <select id="tzMode">
+        <option value="auto">Auto (detect from IANA if provided)</option>
+        <option value="iana">IANA timezone</option>
+        <option value="offset">Offset expression</option>
+      </select>
+      <button class="btn" type="submit">Add</button>
+    </form>
+
+    <section class="list">
+      <ul id="cities"></ul>
+    </section>
+
+    <section class="examples">
+      <strong>Examples:</strong>
+      <button class="chip" data-val="UTC+2">UTC+2</button>
+      <button class="chip" data-val="-5">-5 (hours)</button>
+      <button class="chip" data-val="2h30m">2h30m</button>
+      <button class="chip" data-val="+330m">+330m</button>
+      <button class="chip" data-val="Europe/London">Europe/London</button>
+    </section>
+
+    <footer class="foot">Times update every second. Tasks stored locally in your browser.</footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

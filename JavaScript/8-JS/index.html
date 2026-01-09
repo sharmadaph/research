@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Todo Rules — Simple App</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="todo-app">
+		<header class="top">
+			<h1>Todo Rules</h1>
+			<p class="subtitle">Add tasks and optionally attach rules that auto-mark them complete.</p>
+		</header>
+
+		<form id="addForm" class="add-form">
+			<input id="taskText" type="text" placeholder="Add a task (press Enter to add)" required autocomplete="off" />
+			<select id="ruleType">
+				<option value="none">No rule</option>
+				<option value="contains">Contains text</option>
+				<option value="regex">Matches regex</option>
+				<option value="words_gt">Words &gt; N</option>
+				<option value="expression">Expression (safe)</option>
+			</select>
+			<input id="ruleValue" type="text" placeholder="Rule value (leave empty for 'No rule')" />
+			<button type="submit" class="btn add">Add</button>
+		</form>
+
+		<section class="list-panel">
+			<ul id="tasks" class="tasks" aria-live="polite"></ul>
+		</section>
+
+		<section class="help">
+			<h3>Rule types</h3>
+			<ul>
+				<li><strong>Contains:</strong> marks complete when task text includes the value.</li>
+				<li><strong>Regex:</strong> provide a JS-style regex (no flags). Example: <code>^Buy</code></li>
+				<li><strong>Words &gt; N:</strong> provide a number N.</li>
+				<li><strong>Expression:</strong> a safe boolean expression using variables <code>words</code>, <code>length</code>, <code>digits</code>. Example: <code>words &gt; 3 &amp;&amp; length &lt;= 120</code>.</li>
+			</ul>
+		</section>
+
+		<footer class="foot">Tasks are stored locally in your browser.</footer>
+	</main>
+
+	<script src="script.js" defer></script>
+</body>
+</html>

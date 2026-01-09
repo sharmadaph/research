@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Productivity Timer</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="wrap">
+		<h1>Productivity Timer</h1>
+		<p class="lead">Set minimum and maximum session lengths, then start the timer.</p>
+
+		<form id="controls" class="controls" onsubmit="return false;">
+			<label>Min session (minutes)
+				<input id="minMinutes" type="number" min="1" value="25">
+			</label>
+			<label>Max session (minutes)
+				<input id="maxMinutes" type="number" min="1" value="50">
+			</label>
+			<label>Session target (minutes)
+				<input id="targetMinutes" type="number" min="1" value="25">
+			</label>
+			<div class="actions">
+				<button id="startBtn" class="btn">Start</button>
+				<button id="pauseBtn" class="btn muted">Pause</button>
+				<button id="resetBtn" class="btn ghost">Reset</button>
+			</div>
+		</form>
+
+		<section class="status">
+			<div class="time" id="timeDisplay">00:00</div>
+			<div class="progress">
+				<div id="progressBar" class="bar"></div>
+			</div>
+			<div class="meta">
+				<div>Elapsed: <span id="elapsed">0:00</span></div>
+				<div>Target: <span id="target">25:00</span></div>
+				<div>Allowed: <span id="allowed">25 — 50</span> min</div>
+			</div>
+			<div id="message" class="message"></div>
+		</section>
+
+		<footer class="foot">When the session reaches or exceeds the minimum, the app will indicate completion; if it exceeds the maximum, an alert will show.</footer>
+	</main>
+
+	<script src="script.js" defer></script>
+</body>
+</html>

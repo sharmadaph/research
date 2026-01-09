@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Text Playground</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1 id="title">Interactive Text Playground</h1>
+    <p class="lead">Type into the field below — multiple parts of the page update instantly.</p>
+
+    <label class="input-row">
+      <span class="label">Enter text</span>
+      <input id="textInput" type="text" placeholder="Try: Hello World 123" autocomplete="off" />
+    </label>
+
+    <section class="panels">
+      <div class="panel">
+        <h2>Live Preview</h2>
+        <div id="preview" class="preview">—</div>
+      </div>
+
+      <div class="panel">
+        <h2>Stats</h2>
+        <ul class="stats">
+          <li>Characters: <strong id="charCount">0</strong></li>
+          <li>Words: <strong id="wordCount">0</strong></li>
+          <li>Digits: <strong id="digitCount">0</strong></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Transforms</h2>
+        <div class="transform"><label>Uppercase</label><div id="upper">—</div></div>
+        <div class="transform"><label>Lowercase</label><div id="lower">—</div></div>
+        <div class="transform"><label>Reversed</label><div id="reversed">—</div></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="clearBtn" type="button">Clear</button>
+      <button id="copyBtn" type="button">Copy Preview</button>
+    </div>
+
+    <footer class="note">This example uses separate HTML, CSS and JS files.</footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

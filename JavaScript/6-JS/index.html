@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Live Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="card" role="main">
+		<h1>Live Calculator</h1>
+		<p class="lead">Type a numeric expression and see the evaluated result instantly. Allowed: digits, + - * / % ( ) . and ^ for exponent.</p>
+
+		<div class="row">
+			<input id="expr" type="text" placeholder="e.g. 12/3 + (5*2) ^ 2" aria-label="Expression input" autocomplete="off" />
+			<div id="result" class="result">—</div>
+		</div>
+
+		<div class="info" id="message"></div>
+
+		<div class="example">
+			<div class="chip" data-ex="12/3 + (5*2)^2">12/3 + (5*2)^2</div>
+			<div class="chip" data-ex="(2+3)*4.5">(2+3)*4.5</div>
+			<div class="chip" data-ex="2^10 - 5">2^10 - 5</div>
+			<div class="chip" data-ex="100 % 3">100 % 3</div>
+		</div>
+
+		<footer>Notes: '^' is treated as exponent. Expressions with invalid characters are rejected.</footer>
+	</main>
+
+	<script src="script.js" defer></script>
+</body>
+</html>
