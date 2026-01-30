@@ -1,0 +1,15 @@
+.network {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray; /* Default color */
+  margin: 10px;
+}
+
+.network.online {
+  background-color: green;
+}
+
+.network.offline {
+  background-color: red;
+}
