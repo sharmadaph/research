@@ -23,22 +23,6 @@ jobs:
         include:
           - language: javascript-typescript
             build-mode: none
-          - language: python
-            build-mode: none
-          - language: java-kotlin
-            build-mode: autobuild
-          - language: go
-            build-mode: autobuild
-          - language: c-cpp
-            build-mode: autobuild
-          - language: csharp
-            build-mode: autobuild
-          - language: ruby
-            build-mode: none
-          - language: rust
-            build-mode: autobuild
-          - language: swift
-            build-mode: autobuild
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -62,3 +46,4 @@ jobs:
         with:
           category: "/language:${{matrix.language}}"
           paths: .
+
