@@ -1,0 +1,17 @@
+:root{
+  --network-size:18px;
+  --gap:12px;
+}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:24px}
+.settings{max-width:420px}
+.setting-row{display:flex;align-items:center;justify-content:space-between;gap:var(--gap);padding:8px 0}
+.network{
+  width:var(--network-size);
+  height:var(--network-size);
+  border-radius:50%;
+  background:#c0c0c0;
+  border:2px solid rgba(0,0,0,0.1);
+  box-shadow:0 0 0 4px transparent;
+}
+.network.online{background:#28a745;box-shadow:0 0 0 6px rgba(40,167,69,0.12);}
+.network.offline{background:#d32f2f;box-shadow:0 0 0 6px rgba(211,47,47,0.12);}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Order</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Order Detail</h1>
+    <div id="order-info"></div>
+    <button class="refund-button" style="display:none">Request Refund</button>
+  </div>
+  <script>
+    const id = location.pathname.split('/').pop()
+    async function load(){
+      const res = await fetch('/api/orders/'+id)
+      const o = await res.json()
+      document.getElementById('order-info').innerText = JSON.stringify(o, null, 2)
+      const btn = document.querySelector('.refund-button')
+      if (o.status === 'Paid') btn.style.display = 'inline-block'
+      btn.onclick = async ()=>{
+        await fetch('/api/orders/'+id+'/refund-request', {method:'POST'})
+        alert('Refund requested')
+        load()
+      }
+    }
+    load()
+  </script>
+</body>
+</html>

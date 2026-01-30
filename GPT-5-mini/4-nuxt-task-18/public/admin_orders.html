@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Orders</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Orders</h1>
+    <div id="orders-container"></div>
+  </div>
+  <script>
+    async function load(){
+      const res = await fetch('/api/orders')
+      const orders = await res.json()
+      const container = document.getElementById('orders-container')
+      container.innerHTML = ''
+      orders.forEach(o=>{
+        const el = document.createElement('div')
+        el.id = 'admin_order_'+o.id
+        el.className = 'admin-order'
+        el.innerHTML = `<h3>#admin_order_${o.id}</h3><pre>${JSON.stringify(o,null,2)}</pre>`
+        if (o.status === 'Refund Reviewing'){
+          const btn = document.createElement('button')
+          btn.className = 'pass-refund-review-button'
+          btn.innerText = 'Pass Refund'
+          btn.onclick = async ()=>{
+            await fetch('/admin/api/orders/'+o.id+'/pass-refund', {method:'POST'})
+            alert('Refund passed')
+            load()
+          }
+          el.appendChild(btn)
+        }
+        container.appendChild(el)
+      })
+    }
+    load()
+  </script>
+</body>
+</html>

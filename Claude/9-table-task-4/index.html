@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Cell Selection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    td, th {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:hover td {
+      background-color: #f0f0f0;
+    }
+
+    /* Selected cell highlighting */
+    td.selected, th.selected {
+      background-color: #2196F3 !important;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click a Cell to Select It</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>john@example.com</td>
+        <td>Engineering</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>jane@example.com</td>
+        <td>Marketing</td>
+      </tr>
+      <tr>
+        <td>Bob Johnson</td>
+        <td>bob@example.com</td>
+        <td>Sales</td>
+      </tr>
+      <tr>
+        <td>Alice Williams</td>
+        <td>alice@example.com</td>
+        <td>HR</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
